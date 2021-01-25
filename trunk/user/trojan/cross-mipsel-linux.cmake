@@ -1,11 +1,12 @@
 #
-# CMake Toolchain file for crosscompiling.
+# CMake Toolchain file for crosscompiling on mipsel.
 #
 # This can be used when running cmake in the following way:
 #  cd build/
-#  cmake .. -DCMAKE_TOOLCHAIN_FILE=../cross-linux.cmake
+#  cmake .. -DCMAKE_TOOLCHAIN_FILE=../cross-mipsel-linux.cmake
 
 set(CROSS_PATH $ENV{CONFIG_CROSS_COMPILER_ROOT})
+set(ENV{PKG_CONFIG_PATH} "$ENV{PKG_CONFIG_PATH}:$ENV{STAGEDIR}/lib/pkgconfig")
 
 # Target operating system name.
 set(CMAKE_SYSTEM_NAME Linux)
